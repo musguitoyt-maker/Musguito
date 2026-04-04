@@ -30,7 +30,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow-x: hidden; /* Evita scroll horizontal */
+            overflow-x: hidden; 
         }
 
         /* --- ANIMACIONES --- */
@@ -58,7 +58,7 @@
         }
 
         .error-img {
-            max-width: 80%; /* Ajuste automático para móviles */
+            max-width: 80%;
             height: auto;
             animation: float 5s ease-in-out infinite;
             filter: drop-shadow(0 15px 25px rgba(0,0,0,0.08));
@@ -66,7 +66,7 @@
 
         /* --- TEXTOS --- */
         h1 {
-            font-size: clamp(4rem, 20vw, 7rem); /* Tamaño fluido según pantalla */
+            font-size: clamp(4rem, 20vw, 7rem);
             font-weight: 900;
             line-height: 1;
             margin-bottom: 0.5rem;
@@ -75,7 +75,7 @@
 
         h1 span {
             color: var(--lima);
-            -webkit-text-stroke: 2px var(--negro); /* Contorno para legibilidad */
+            -webkit-text-stroke: 2px var(--negro);
         }
 
         h2 {
@@ -105,8 +105,8 @@
             text-decoration: none;
             border-radius: 16px;
             font-weight: 600;
-            width: 100%; /* Ancho completo en móvil */
-            max-width: 280px; /* Tamaño máximo en escritorio */
+            width: 100%;
+            max-width: 280px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
@@ -138,7 +138,6 @@
             border-radius: 50%;
         }
 
-        /* --- MEDIA QUERIES (Desktop) --- */
         @media (min-width: 768px) {
             .btn-home {
                 width: auto;
