@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Musguito</title>
+    
+    <link rel="icon" type="image/png" href="Musguito.png">
+
+    <style>
+        :root {
+            --lima: #bef264;
+            --negro: #0f172a;
+            --gris-texto: #64748b;
+            --transicion: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #ffffff;
+            color: var(--negro);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- CONTENIDO --- */
+        .error-container {
+            animation: fadeIn 0.8s ease-out;
+            max-width: 500px;
+        }
+
+        .logo-404 {
+            height: 80px;
+            width: auto;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .code-404 {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+            background: linear-gradient(180deg, var(--negro) 30%, var(--lima));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -5px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--gris-texto);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* --- BOTÓN REGRESAR --- */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--negro);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transicion);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-back:hover {
+            background-color: var(--lima);
+            color: var(--negro);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(190, 242, 100, 0.4);
+        }
+
+        /* --- DECORACIÓN SUTIL --- */
+        .bg-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--lima);
+            filter: blur(150px);
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 480px) {
+            .code-404 { font-size: 6rem; }
+            h1 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="error-container">
+        <img src="Musguito.png" alt="Musguito" class="logo-404">
+        
+        <div class="code-404">404</div>
+        
+        <h1>Vaya, parece que te has perdido en el bosque.</h1>
+        <p>La página que buscas no existe o ha sido movida a un lugar más profundo.</p>
+        
+        <a href="index.html" class="btn-back">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Volver al inicio
+        </a>
+    </div>
+
+</body>
+</html>
+
