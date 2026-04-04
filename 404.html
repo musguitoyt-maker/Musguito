@@ -12,7 +12,7 @@
             --lima: #bef264;
             --negro: #0f172a;
             --gris-texto: #64748b;
-            --transicion: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -27,18 +27,16 @@
             color: var(--negro);
             height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
             overflow: hidden;
         }
 
         /* --- ANIMACIONES --- */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
 
@@ -47,53 +45,56 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* --- CONTENIDO --- */
-        .error-container {
-            animation: fadeIn 0.8s ease-out;
+        .container {
+            padding: 2rem;
             max-width: 500px;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        .logo-404 {
-            height: 80px;
-            width: auto;
-            margin-bottom: 30px;
-            border-radius: 12px;
+        /* --- IMAGEN DE ERROR --- */
+        .error-img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 2rem;
             animation: float 4s ease-in-out infinite;
-        }
-
-        .code-404 {
-            font-size: 8rem;
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 10px;
-            background: linear-gradient(180deg, var(--negro) 30%, var(--lima));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -5px;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.05));
         }
 
         h1 {
+            font-size: 6rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: -3px;
+        }
+
+        h1 span {
+            color: var(--lima);
+            text-shadow: 2px 2px 0px var(--negro);
+        }
+
+        h2 {
             font-size: 1.5rem;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
             font-weight: 700;
         }
 
         p {
             color: var(--gris-texto);
-            margin-bottom: 40px;
+            margin-bottom: 2.5rem;
             font-size: 1.1rem;
         }
 
-        /* --- BOTÓN REGRESAR --- */
+        /* --- BOTÓN VOLVER --- */
         .btn-back {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             background-color: var(--negro);
-            color: white;
+            color: #ffffff;
             padding: 16px 32px;
-            border-radius: 12px;
             text-decoration: none;
+            border-radius: 12px;
             font-weight: 600;
             transition: var(--transicion);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -106,24 +107,16 @@
             box-shadow: 0 15px 30px rgba(190, 242, 100, 0.4);
         }
 
-        /* --- DECORACIÓN SUTIL --- */
+        /* --- DETALLE DE FONDO --- */
         .bg-glow {
             position: absolute;
             width: 300px;
             height: 300px;
             background: var(--lima);
             filter: blur(150px);
-            border-radius: 50%;
             opacity: 0.15;
             z-index: -1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        @media (max-width: 480px) {
-            .code-404 { font-size: 6rem; }
-            h1 { font-size: 1.2rem; }
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -131,13 +124,12 @@
 
     <div class="bg-glow"></div>
 
-    <div class="error-container">
-        <img src="Musguito.png" alt="Musguito" class="logo-404">
+    <div class="container">
+        <img src="error.png" alt="Error 404 Musguito" class="error-img">
         
-        <div class="code-404">404</div>
-        
-        <h1>Vaya, parece que te has perdido en el bosque.</h1>
-        <p>La página que buscas no existe o ha sido movida a un lugar más profundo.</p>
+        <h1>4<span>0</span>4</h1>
+        <h2>Ruta no encontrada</h2>
+        <p>Parece que te has adentrado demasiado en el bosque. Esta página no existe o ha sido movida.</p>
         
         <a href="index.html" class="btn-back">
             <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -149,4 +141,3 @@
 
 </body>
 </html>
-
